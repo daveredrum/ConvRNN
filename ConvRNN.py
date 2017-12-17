@@ -62,14 +62,14 @@ class ConvLSTM:
     
     def _initialize_lstm(self):
         variables = {}
-        variables['wf'] = tf.Variable(tf.truncated_normal([1, self.conv_output], stddev=0.1))
-        variables['bf'] = tf.Variable(tf.constant(0.1, shape=[1, self.conv_output]))
-        variables['wi'] = tf.Variable(tf.truncated_normal([1, self.conv_output], stddev=0.1))
-        variables['bi'] = tf.Variable(tf.constant(0.1, shape=[1, self.conv_output]))
-        variables['wc'] = tf.Variable(tf.truncated_normal([1, self.conv_output], stddev=0.1))
-        variables['bc'] = tf.Variable(tf.constant(0.1, shape=[1, self.conv_output]))
-        variables['wo'] = tf.Variable(tf.truncated_normal([1, self.conv_output], stddev=0.1))
-        variables['bo'] = tf.Variable(tf.constant(0.1, shape=[1, self.conv_output]))
+        variables['wf'] = tf.Variable(tf.truncated_normal([self.conv_output, self.input_size[0]], stddev=0.1))
+        variables['bf'] = tf.Variable(tf.constant(0.1, shape=[self.input_size[0]]))
+        variables['wi'] = tf.Variable(tf.truncated_normal([self.conv_output, self.input_size[0]], stddev=0.1))
+        variables['bi'] = tf.Variable(tf.constant(0.1, shape=[self.input_size[0]]))
+        variables['wc'] = tf.Variable(tf.truncated_normal([self.conv_output, self.input_size[0]], stddev=0.1))
+        variables['bc'] = tf.Variable(tf.constant(0.1, shape=[self.input_size[0]]))
+        variables['wo'] = tf.Variable(tf.truncated_normal([self.conv_output, self.input_size[0]], stddev=0.1))
+        variables['bo'] = tf.Variable(tf.constant(0.1, shape=[self.input_size[0]]))
         return variables
 
 
