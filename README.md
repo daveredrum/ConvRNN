@@ -10,5 +10,6 @@ convlstm = ConvLSTM(filter_size=filter_size,
                     pool_size=[1, 2, 2, 1], 
                     pool_stride=[1, 2, 2, 1])
 # initial call
-outputs, state = convlstm(inputs)
+state = convlstm.initState()
+outputs, state = convlstm(inputs, state)
 ```
